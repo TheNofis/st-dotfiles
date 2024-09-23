@@ -15,10 +15,10 @@ config.h:
 .c.o:
 	$(CC) $(STCFLAGS) -c $<
 
-st.o: config.h st.h win.h
-x.o: arg.h config.h st.h win.h
+st.o: ./config/config.h st.h win.h
+x.o: arg.h ./config/config.h st.h win.h
 
-$(OBJ): config.h config.mk
+$(OBJ): ./config/config.h config.mk
 
 st: $(OBJ)
 	$(CC) -o $@ $(OBJ) $(STLDFLAGS)
